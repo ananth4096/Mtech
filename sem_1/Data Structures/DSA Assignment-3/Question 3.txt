@@ -1,0 +1,23 @@
+The given code in this question is:
+ 
+def Fun(test):
+    if test < 0:  # Base case: If 'test' is 0 or negative, return 0
+        return 0
+    test_new = test + Fun(test - 1)  # Recursive call: Calculate the sum of 'test' and the result of Fun(test - 1)
+    return test_new
+
+test = 5  # Setting the initial value of 'test' to 5
+x = Fun(test)  # Calling the Fun function with 'test' as an argument and storing the result in 'x'
+print(x, end="")  # Printing the value of 'x', which is the result of the recursive sum
+
+The output of the following code is 15.
+
+
+First it checks the input is greater than zero. If it greater than zero, then performs recursion
+
+fun(5) => invoked => 5 + fun(4) fun(4) => invoked => 4 + fun(3) fun(3) => invoked => 3 + fun(2) fun(2) => invoked => 2 + fun(1) fun(1) => invoked => 1 + fun(0) fun(0) => returns basecase 0
+
+After that releasing from stack, prints output,
+
+fun(1) => 0 + 1 = 1 fun(2) => 1 + 2 = 3 fun(3) => 3 + 3 = 6 fun(4) => 6 + 4 = 10 fun(5) => 10 + 5 = 1
+So the output is 15.
